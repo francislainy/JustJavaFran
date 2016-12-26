@@ -16,8 +16,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button buttonPlus = (Button) findViewById(R.id.button_plus);
-        buttonPlus.setOnClickListener(new View.OnClickListener() {
+        Button plusButton = (Button) findViewById(R.id.button_plus);
+        plusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 quantity++;
@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button buttonMinus = (Button) findViewById(R.id.button_minus);
-        buttonMinus.setOnClickListener(new View.OnClickListener() {
+        Button minusButton = (Button) findViewById(R.id.button_minus);
+        minusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(quantity > 1){
@@ -37,12 +37,23 @@ public class MainActivity extends AppCompatActivity {
                 display(view);
             }
         });
-        
 
+        Button orderButton = (Button) findViewById(R.id.submit_order_button);
+        orderButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextView textView = (TextView) findViewById(R.id.display_order_view);
+                int price = 5;
+                String message = "Thanks for buying with us\nYou bought " + quantity + " cups of coffee";
+                message+= "\nThe total price amounts to: " + (price*quantity) + " euros";
+                textView.setText(message);
+                
+            }
+        });
     }
 
     public void display(View view) {
-        TextView textView = (TextView) findViewById(R.id.display_order_view);
+        TextView textView = (TextView) findViewById(R.id.display_quantity_view);
         textView.setText(quantity + "");
     }
 
