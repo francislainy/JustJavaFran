@@ -1,5 +1,7 @@
 package com.example.android.justjavafran;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -42,12 +44,19 @@ public class MainActivity extends AppCompatActivity {
         orderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextView textView = (TextView) findViewById(R.id.display_order_view);
                 int price = 5;
-                String message = "Thanks for buying with us\nYou bought " + quantity + " cups of coffee";
+                String message = "Thanks for buying with us\nYou've bought " + quantity + " cups of coffee";
                 message+= "\nThe total price amounts to: " + (price*quantity) + " euros";
-                textView.setText(message);
-                
+
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto:"));
+                intent.putExtra(Intent.EXTRA_EMAIL, "java@udacity.com");
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Coffee Order");
+                intent.putExtra(Intent.EXTRA_TEXT, message);
+
+                if(intent.resolveActivity(getPackageManager()) != null)
+                    startActivity(intent);
+
             }
         });
     }
