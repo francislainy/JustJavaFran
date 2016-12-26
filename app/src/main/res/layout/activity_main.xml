@@ -15,11 +15,11 @@
         android:id="@+id/name_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Name" />
+        android:inputType="textCapWords"
+        android:hint="Name" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Header"
         android:text="Toppings" />
 
     <LinearLayout
@@ -29,8 +29,7 @@
 
         <CheckBox
             android:id="@+id/add_whipped_cream_checkbox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            style="@style/CheckBox" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -46,19 +45,17 @@
 
         <CheckBox
             android:id="@+id/add_chocolate_checkbox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            style="@style/CheckBox" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Whipped Cream" />
+            android:text="Chocolate" />
 
     </LinearLayout>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Header"
         android:text="Quantity" />
 
     <LinearLayout
@@ -68,20 +65,23 @@
 
         <Button
             android:id="@+id/button_minus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:text="-" />
 
         <TextView
             android:id="@+id/display_quantity_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textSize="16sp"
             android:text="1" />
 
         <Button
             android:id="@+id/button_plus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:text="+" />
 
     </LinearLayout>
@@ -90,6 +90,7 @@
         android:id="@+id/submit_order_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="Order" />
 
 
