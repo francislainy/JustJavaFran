@@ -12,6 +12,7 @@
     tools:context="com.example.android.justjavafran.MainActivity">
 
     <EditText
+        android:id="@+id/name_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Name" />
@@ -27,6 +28,7 @@
         android:orientation="horizontal">
 
         <CheckBox
+            android:id="@+id/add_whipped_cream_checkbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -43,6 +45,7 @@
         android:orientation="horizontal">
 
         <CheckBox
+            android:id="@+id/add_chocolate_checkbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -82,11 +85,6 @@
             android:text="+" />
 
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/display_order_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/submit_order_button"
